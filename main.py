@@ -104,33 +104,14 @@ print('Arquivo .docx salvo')
 
 
 
-'''
-for root, dirs, files in os.walk("C:\\Users\\Mateus\\Downloads\\RPG\\DnD\\5E\Monstros\\[D&D 5E] - Cartas - Bestiario dos Monstros - Ordenar Paginas"):
-    for file in files:
-        os.rename(os.path.join(root,file),os.path.join(root,'Bestiario dos Monstros '+file[-8:]))
-'''   
-
 #Exclui as imagens 3x3
-"""
-for root, dirs, files in os.walk(pasta3x3):
-    for file in files:
+
+# for root, dirs, files in os.walk(pasta3x3):
+#     for file in files:
         
-        original_img_path = os.path.join(root, file)
-        excesion=('png', 'jpeg', 'jpg')
-        if file.split(".")[-1] in excesion:
-            if os.path.exists(original_img_path):
-                os.remove(original_img_path)
- """              
-
-
-"""
-for root, dirs, files in os.walk(pasta):
-    for file in files:
-        original_img_path = os.path.join(root, file)
-        #print(original_img_path)
-        pillow_img = Image.open(original_img_path)
-        width, height = pillow_img.size
-        if width!=pixelW or height!=pixelH:
-            new_img = pillow_img.resize((pixelW,pixelH), Image.LANCZOS)
-            new_img.save(original_img_path,optimize=True,quality=100)
-"""
+#         original_img_path = os.path.join(root, file)
+#         excesion=('png', 'jpeg', 'jpg')
+#         if file.split(".")[-1] in excesion:
+#             if os.path.exists(original_img_path):
+#                 os.remove(original_img_path)
+             

@@ -24,8 +24,8 @@ k=1
 dimecaow=3
 dimecaoh=3
 
-pixelW=748
-pixelH=1048
+pixelW=745
+pixelH=1045
 img3x3 = Image.new ('RGB',(dimecaow*(pixelW+linhabranca),dimecaoh*(pixelH+linhabranca)), (255,255,255))
 
 
@@ -37,6 +37,11 @@ if not os.path.exists(pasta3x3):
 # print(pasta3x3)
 #pasta3x3=filedialog.askdirectory(title=f"Escolha um diretorio para salvar as imagens {dimecaow}x{dimecaoh} e o .Docx")
 
+qty=0
+for root, dirs, files in os.walk(pasta):
+    for file in files:
+        qty=qty+len(files)
+        break
 
 for root, dirs, files in os.walk(pasta):
     for file in files:
@@ -58,10 +63,10 @@ for root, dirs, files in os.walk(pasta):
         pillow_img = Image.open(original_img_path)
         img3x3.paste (pillow_img, (i*(pixelW+linhabranca),j*(pixelH+linhabranca)))
 
-        #print(k, len(files))
-        if (i==dimecaow-1 and j==dimecaoh-1) or k==len(files):
+        #print(k, qty)
+        if (i==dimecaow-1 and j==dimecaoh-1) or k==qty:
 
-            print("Salvou com: "+str(k)+' '+str(len(files)) )
+            print("Salvou com: "+str(k)+' '+str(qty) )
 
             name_3x3_str=str(name_3x3)
             #if len(str(name_3x3))==1:
